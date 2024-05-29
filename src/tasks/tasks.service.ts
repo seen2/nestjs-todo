@@ -51,6 +51,8 @@ export class TasksService {
     }
   }
   deleteTaskById(id: string): void {
+    const found = this.getTaskById(id);
+    if (!found) throw new NotFoundException(`Task Not found for ID: ${id}`);
     this.tasks = this.tasks.filter((task: Task) => task.id !== id);
   }
   //DTO Approach
