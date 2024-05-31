@@ -1,0 +1,21 @@
+{
+    "cSpell.words": [
+        "typeorm"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "codespaces-3556ac",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "NEST",
+            "database": "task_management",
+            "username": "root",
+            "password": "password"
+        }
+    ]
+}
