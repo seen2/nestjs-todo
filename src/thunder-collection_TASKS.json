@@ -1,0 +1,93 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "TASKS",
+    "collectionId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+    "dateExported": "2024-05-31T08:30:22.946Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "67c7b220-756e-460b-9169-fa919f6fbd56",
+            "colId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+            "containerId": "",
+            "name": "CREATE NEW TASK",
+            "url": "127.0.0.1:3000/tasks/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-31T08:18:41.810Z",
+            "modified": "2024-05-31T08:25:51.082Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"Another Task\",\n  \"description\":\"Some Desc\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ffc5499a-3036-44e6-b61d-f2cadd784c46",
+            "colId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+            "containerId": "",
+            "name": "GET TASK BY ID",
+            "url": "127.0.0.1:3000/tasks/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-31T08:19:58.486Z",
+            "modified": "2024-05-31T08:27:38.782Z",
+            "headers": []
+        },
+        {
+            "_id": "a355bdca-0f18-41da-8a1a-d0a4c90d9ea9",
+            "colId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+            "containerId": "",
+            "name": "UPDATE TASK TASK STATUS",
+            "url": "127.0.0.1:3000/tasks/6e0db790-1dba-11ef-8df9-7f23d3b19d43/status",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2024-05-31T08:25:26.168Z",
+            "modified": "2024-05-31T08:25:26.168Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\":\"OPEN\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c42c1952-e029-4251-8558-325801a8a9fc",
+            "colId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+            "containerId": "",
+            "name": "GET ALL TASKS",
+            "url": "127.0.0.1:3000/tasks?search=task&status=OPEN",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-31T08:27:11.528Z",
+            "modified": "2024-05-31T08:27:11.528Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "task",
+                    "isPath": false
+                },
+                {
+                    "name": "status",
+                    "value": "OPEN",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c350289a-6d67-4750-addb-b8985f6539dc",
+            "colId": "1f19cf3a-21e7-400b-af42-49102d9ef5e2",
+            "containerId": "",
+            "name": "DELETE TASK BY ID",
+            "url": "127.0.0.1:3000/tasks/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-31T08:28:57.417Z",
+            "modified": "2024-05-31T08:28:57.417Z",
+            "headers": []
+        }
+    ],
+    "ref": "8l0DTgtRyhnFNx5sWT6irq3Ga5MXm_grxHsyjSlyGm3C4RSBpO8KBC2fQJFgb-O7sutRDFtW2iErINy-6hkl4A"
+}
