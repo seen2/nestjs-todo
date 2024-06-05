@@ -9,13 +9,13 @@
                 "enableSsl": "Disabled"
             },
             "previewLimit": 50,
-            "server": "codespaces-3556ac",
+            "server": "127.0.0.1",
             "port": 3306,
             "driver": "MySQL",
             "name": "NEST",
-            "database": "task_management",
             "username": "root",
-            "password": "password"
+            "password": "password",
+            "database": "task_management"
         }
     ]
 }
