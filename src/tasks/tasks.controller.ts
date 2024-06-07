@@ -8,6 +8,7 @@ import {
   Patch,
   Post,
   Query,
+  UseGuards,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -17,7 +18,9 @@ import { Tasks } from './task.entity';
 import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 import { TaskStatus } from './task.enum';
 import { FilterTaskDto } from './dto/get-task-filter.dto';
+import { AuthGuard } from 'src/auth/auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
@@ -29,6 +32,7 @@ export class TasksController {
     // console.log(filterTaskDto);
     return this.tasksService.getTasksWithFilter(filterTaskDto);
   }
+  // @UseGuards(AuthGuard)
   @Post()
   @UsePipes(ValidationPipe)
   createTask(@Body() createTaskDto: CreateTaskDto): Promise<Tasks> {

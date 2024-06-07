@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
 import { Tasks } from './task.entity';
-import { Injectable, NotFoundException, Search } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskStatus } from './task.enum';
 
@@ -50,9 +50,9 @@ export class TaskRepository extends Repository<Tasks> {
     if (status) {
       query.andWhere('tasks.status=:status', { status });
     }
-    if (Search) {
+    if (search) {
       query.andWhere(
-        'tasks.title LIKE :search OR task.description LIKE :search',
+        'tasks.title LIKE :search OR tasks.description LIKE :search',
         { search: `%${search}%` },
       );
     }
