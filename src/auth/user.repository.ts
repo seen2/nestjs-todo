@@ -1,5 +1,10 @@
 import { DataSource, Repository } from 'typeorm';
-import { Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { User } from './user.entity';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 
@@ -13,6 +18,26 @@ export class UserRepository extends Repository<User> {
     const user = new User();
     user.username = username;
     user.password = password;
-    this.save(user);
+    try {
+      await this.save(user);
+    } catch (e: any) {
+      if (e?.errno === process.env.DUPLICATE_USERNAME_CODE) {
+        throw new ConflictException('Username already Exist');
+      } else {
+        throw new InternalServerErrorException('Something Went Wrong');
+      }
+    }
+    return user;
+  }
+  async signIn(authCredentialsDto: AuthCredentialsDto): Promise<User> {
+    const user = await this.findOne({
+      where: { username: authCredentialsDto.username },
+    });
+    if (!user) {
+      throw new NotFoundException(
+        `Username: ${authCredentialsDto.username}, Not Found`,
+      );
+    }
+    return user;
   }
 }
